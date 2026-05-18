@@ -15,7 +15,7 @@ $total_products = $productObj->countProducts();
 $total_orders = $orderObj->countOrders();
 
 // In a real app, we might calculate total revenue here too
-$stmt = Database::getInstance()->getConnection()->query("SELECT SUM(total_price) as revenue FROM orders WHERE status = 'completed' OR status = 'pending'");
+$stmt = Database::getInstance()->getConnection()->query("SELECT SUM(total_price) as revenue FROM orders WHERE status = 'completed'");
 $revenue = $stmt->fetch()['revenue'] ?? 0;
 ?>
 
